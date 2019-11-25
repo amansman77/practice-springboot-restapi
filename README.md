@@ -64,7 +64,7 @@ JWT 활용
 ## API 공유
 
 ASCII Doctor를 활용하여 인터페이스 공유
-
+문서 경로 : [프로젝트 Path]/build/asciidoc/html5/index.html
 
 ## 참고 문헌
  - RFC : [HTTP](https://tools.ietf.org/html/rfc7231), [GET](https://tools.ietf.org/html/rfc7231#section-4.3.1), [HEAD](https://tools.ietf.org/html/rfc7231#section-4.3.2), [POST](https://tools.ietf.org/html/rfc7231#section-4.3.3), [PUT](https://tools.ietf.org/html/rfc7231#section-4.3.4), [DELETE](https://tools.ietf.org/html/rfc7231#section-4.3.5)

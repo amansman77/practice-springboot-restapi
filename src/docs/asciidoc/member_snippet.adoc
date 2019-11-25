@@ -1,0 +1,47 @@
+[[member]]
+
+== 회원 API
+회원관리를 위한 API를 제공합니다.
+
+회원 가입 및 수신자를 설정합니다.
+
+
+=== 회원 등록 API
+회원을 등록하는 API입니다.
+
+operation::member-controller-test/test-add-member[snippets='http-request,request-fields,http-response,response-fields']
+
+
+=== 회원 ID 중복 확인 API
+회원이 사용할 정보(아이디, 이메일, ...)가 존재하는지 확인하는 API입니다.
+
+중복된 정보가 존재하면 Http response code 200을 반환하고
+
+중복된 정보가 존재하지 않으면 Http response code 404를 반환합니다.
+
+Response body는 반환하지 않습니다.
+
+operation::member-controller-test/test-has-member-id[snippets='http-request,request-parameters,http-response']
+
+
+=== 회원 정보 갱신 API
+회원정보를 갱신하는 API입니다.
+
+정의된 모든필드를 갱신합니다.
+
+operation::member-controller-test/test-update-member[snippets='http-request,path-parameters,request-fields,http-response']
+
+
+=== 회원 정보 삭제 API
+회원정보를 삭제(중지)하는 API입니다.
+comments(중지사유)를 입력 받습니다.
+
+operation::member-controller-test/test-delete-member[snippets='http-request,path-parameters,request-parameters,http-response']
+
+
+=== 회원 정보 검색 API
+활성화된 전체회원의 리스트를 확인하고 각 query에 해당하는 회원정보를 검색하는 API입니다.
+
+[이름, id, 권한] 필드에 대해서만 검색을 제공합니다.
+
+operation::member-controller-test/test-get-members[snippets='http-request,request-parameters,http-response,response-headers,response-fields']
