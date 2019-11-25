@@ -57,6 +57,7 @@ import com.ho.practice.restapi.dto.SearchParamDto;
 import com.ho.practice.restapi.dto.request.MemberAddReqDto;
 import com.ho.practice.restapi.dto.request.MemberUpdateReqDto;
 import com.ho.practice.restapi.entity.Member;
+import com.ho.practice.restapi.service.AuthService;
 import com.ho.practice.restapi.service.MemberService;
 import com.ho.practice.restapi.util.QueryParser;
 
@@ -73,6 +74,9 @@ public class MemberControllerTest {
 
 	@MockBean
     private MemberService mamberService;
+	
+	@MockBean
+	private AuthService authService;
 	
 	@Autowired
     private ObjectMapper objectMapper;

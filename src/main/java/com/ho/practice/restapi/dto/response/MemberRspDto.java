@@ -37,7 +37,9 @@ public class MemberRspDto {
 	private String comments;
 	
 	public MemberRspDto(Member member) {
-		// TODO Auto-generated constructor stub
+		this.id = member.getId();
+		this.name = member.getName();
+		this.email = member.getEmail();
 	}
 	
 }
