@@ -84,7 +84,7 @@ public class MemberController {
 	}
 
 	/**
-	 * 리스트 회원검색, 페이징, 검색조건 : 이름, id, 권한
+	 * 리스트 회원검색, 페이징, 검색조건 : 이름, 회원 아이디, 권한
 	 * 
 	 * @return
 	 */
@@ -97,7 +97,9 @@ public class MemberController {
 		QueryParser parser = new QueryParser();
 		Page<Member> page = memberService.getMembers(SearchParamDto.builder()
 				.queryMap(parser.parsing(URLDecoder.decode(query, StandardCharsets.UTF_8.toString())))
-				.offset(Integer.valueOf(offset)).limit(Integer.valueOf(limit)).build());
+				.offset(Integer.valueOf(offset))
+				.limit(Integer.valueOf(limit)).build()
+				);
 	
 		List<MemberRspDto> result = new ArrayList<>();
 		for (Member member : page.getContent()) {

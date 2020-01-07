@@ -5,8 +5,9 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -16,34 +17,32 @@ import com.ho.practice.restapi.dto.request.MemberUpdateReqDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Data
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Entity
 @Builder
+@ToString
+
+@Entity
 @EntityListeners(AuditingEntityListener.class)
 public class Member {
 	
 	@Id
-	private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
-	@NotNull
 	private String password;
 	
-	@NotNull
 	private String name;
 	
-	@NotNull
 	private String email;
 	
-	@NotNull
 	private String phoneNumber;
 	
 	private String authCodeId;
@@ -62,9 +61,6 @@ public class Member {
 	
 	private boolean recentStatus;
     
-	public Member() {
-	}
-
 	public Member(MemberDto memberDto) {
 		// TODO Auto-generated constructor stub
 	}

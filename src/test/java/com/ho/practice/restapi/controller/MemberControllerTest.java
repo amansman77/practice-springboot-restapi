@@ -195,7 +195,7 @@ public class MemberControllerTest {
 		
 		given(mamberService.getMembers(searchParamDto)).willReturn(new PageImpl<>(Arrays.asList(
 				Member.builder()
-				  		.id("admin")
+				  		.id(0L)
 						.name("홍길동")
 						.email("hong@micube.co.kr")
 						.phoneNumber("010-1111-2222")
@@ -207,7 +207,7 @@ public class MemberControllerTest {
 						.comments("")
 					.build()
 				  ,  Member.builder()
-				  		.id("worker")
+				  		.id(1L)
 						.name("김철수")
 						.email("jhon@micube.co.kr")
 						.phoneNumber("010-2222-8282")
@@ -235,7 +235,7 @@ public class MemberControllerTest {
 			.andExpect(jsonPath("$.code").value(SuccessCode.SUCCESS))
             .andExpect(jsonPath("$.message").value(SuccessMsg.SUCCESS))
 			.andExpect(jsonPath("$.data", IsCollectionWithSize.hasSize(2)))
-			.andExpect(jsonPath("$.data[0].id").value("admin"))
+			.andExpect(jsonPath("$.data[0].id").value("0"))
 			.andExpect(jsonPath("$.data[0].name").value("홍길동"))
 			.andExpect(jsonPath("$.data[0].email").value("hong@micube.co.kr"))
 			.andDo(this.document.document(

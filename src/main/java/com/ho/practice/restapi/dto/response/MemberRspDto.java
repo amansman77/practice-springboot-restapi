@@ -24,7 +24,7 @@ import lombok.ToString;
 @ToString
 public class MemberRspDto {
 	
-	private String id;
+	private Long id;
 	private String name;
 	private String email;
 	private String phoneNumber;

@@ -64,7 +64,7 @@ public class MemberService {
 			// 쿼리가 있으면
 			page = memberRepository.findMember(
 					Member.builder()
-						.id(searchParamDto.getQueryMap().get("id"))
+						.id(Long.valueOf(searchParamDto.getQueryMap().get("id")))
 						.name(searchParamDto.getQueryMap().get("name"))
 						.build()
 					, pageable);

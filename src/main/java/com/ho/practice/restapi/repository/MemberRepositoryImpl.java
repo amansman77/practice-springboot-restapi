@@ -24,7 +24,7 @@ public class MemberRepositoryImpl implements MemberRepositoryCustum {
 		
 		BooleanBuilder builder = new BooleanBuilder();
 
-        if (!StringUtils.isEmpty(param.getId())) {
+        if (param.getId() != null) {
             builder.and(member.id.eq(param.getId()));
         }
         if (!StringUtils.isEmpty(param.getName())) {
