@@ -4,8 +4,8 @@
 Springboot기반으로 RestAPI 설계를 합니다.
 
 
-## 개발 프레임워크
- - IDE : STS-4.2.2.RELEASE
+## 개발 환경
+ - IDE : VSCode-win32-x64-1.46.1
  - Java : openjdk 12.0.1
  - Spring Boot : 2.1.8
  - Gradle : 5.6.2
@@ -16,6 +16,11 @@ Springboot기반으로 RestAPI 설계를 합니다.
 객체의 상속 상황에서 활용도 있음
 
 ## 데이터 연결
+
+```bash
+> docker run -p 15432:5432 -e POSTGRES_DB=testdb -e POSTGRES_USER=testuser -e POSTGRES_PASSWORD=testpass --name=postgres_test -d postgres:12.3
+> docker run -d --name pgadmin4 -p 49002:80 -e "PGADMIN_DEFAULT_EMAIL=admin@domain.com" -e "PGADMIN_DEFAULT_PASSWORD=admin" dpage/pgadmin4
+```
 
 ### JPA 활용
 
